@@ -15,3 +15,5 @@ Tools:
 `gcc-multilib g++-multilib libc6-dbg:i386`
 + imhex
 + 010editor
++ ida
++ qemu starter.sh + import ssh key qemu
