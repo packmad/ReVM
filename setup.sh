@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 
+function download_documents {
+    doc_dir="$HOME/Documents"
+    if [ ! -f "$doc_dir/SAT_SMT_by_example.pdf" ]; then
+        wget https://sat-smt.codes/SAT_SMT_by_example.pdf
+    fi
+}
+
 function install_vscode {
+    if [ -f "/etc/apt/sources.list.d/vscode.list" ]; then
+        echo "Visual Studio Code already installed!"
+        exit 1
+    fi
     wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
     sudo apt install code
@@ -65,10 +76,11 @@ function install_ghidra {
 
 
 sudo apt -y update && sudo apt -y upgrade
-sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm
+sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator
 sudo pip3 install --upgrade pip
-sudo pip3 install capstone ropper unicorn keystone-engine pwntools
+sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools
 
+download_documents
 install_vscode
 install_imhex
 install_cutter
