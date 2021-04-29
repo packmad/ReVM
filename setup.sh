@@ -4,9 +4,8 @@ function download_documents {
     doc_dir="$HOME/Documents"
     if [ ! -f "$doc_dir/SAT_SMT_by_example.pdf" ]; then
         wget https://sat-smt.codes/SAT_SMT_by_example.pdf
-        return 0
     fi
-    return 1
+    return 0
 }
 
 function install_vscode {
@@ -16,8 +15,10 @@ function install_vscode {
         wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
         sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
         sudo apt install code
+        echo "Visual Studio installed."
         return 0
     fi
+    echo "Visual Studio Code already installed!"
     return 1
 }
 
@@ -32,6 +33,7 @@ function install_imhex {
     wget https://github.com/WerWolv/ImHex/releases/download/v1.7.0/Linux.ELF.zip
     unzip -q Linux.ELF.zip -d $install_dir
     chmod +x $install_dir/imhex
+    echo "ImHex already installed."
     return 0
 }
 
@@ -48,6 +50,7 @@ function install_cutter {
     chmod +x $cutter_appimage
     mkdir $install_dir
     mv $cutter_appimage $install_dir
+    echo "Cutter installed."
     return 0
 }
 
@@ -75,8 +78,8 @@ function install_ghidra {
     unzip -q $ghidra_zip -d $install_dir
     cd $install_dir
     ghi_dir=`ls | grep ghidra_`
-    echo "Ghidra installed!"
     rm $HOME/Downloads/ghidra*zip
+    echo "Ghidra installed."
     return 0
 }
 
