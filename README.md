@@ -9,7 +9,8 @@
   + [Wireshark](https://www.wireshark.org/)
   + [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
 + Python Packages
-  + [capstone](https://pypi.org/project/capstone/) 
+  + [capstone](https://pypi.org/project/capstone/)
+  + [frida](https://pypi.org/project/frida/)
   + [keystone-engine](https://pypi.org/project/keystone-engine/)
   + [pwntools](https://pypi.org/project/pwntools/)
   + [ropper](https://pypi.org/project/ropper/)

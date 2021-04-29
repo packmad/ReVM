@@ -23,21 +23,6 @@ function install_vscode {
     return 1
 }
 
-function install_imhex {
-    install_dir="$HOME/ImHex"
-    if [ -d $install_dir ]
-    then
-        echo ">>> ImHex already installed!"
-        return 1
-    fi
-    cd $HOME/Downloads
-    wget https://github.com/WerWolv/ImHex/releases/download/v1.7.0/Linux.ELF.zip
-    unzip -q Linux.ELF.zip -d $install_dir
-    chmod +x $install_dir/imhex
-    echo ">>> ImHex already installed."
-    return 0
-}
-
 function install_cutter {
     install_dir="$HOME/Cutter"
     if [ -d $install_dir ]
@@ -88,7 +73,7 @@ function install_ghidra {
 sudo apt -y update && sudo apt -y upgrade
 sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl gcc-multilib g++-multilib libc6-dbg:i386
 sudo pip3 install --upgrade pip
-sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools scapy volatility3
+sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools scapy volatility3 frida
 
 download_documents
 install_vscode
