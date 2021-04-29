@@ -2,6 +2,7 @@
 
 function download_documents {
     doc_dir="$HOME/Documents"
+    cd $doc_dir
     if [ ! -f "$doc_dir/SAT_SMT_by_example.pdf" ]; then
         wget https://sat-smt.codes/SAT_SMT_by_example.pdf
     fi
@@ -15,10 +16,10 @@ function install_vscode {
         wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
         sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
         sudo apt install code
-        echo "Visual Studio installed."
+        echo ">>> Visual Studio installed."
         return 0
     fi
-    echo "Visual Studio Code already installed!"
+    echo ">>> Visual Studio Code already installed!"
     return 1
 }
 
@@ -26,14 +27,14 @@ function install_imhex {
     install_dir="$HOME/ImHex"
     if [ -d $install_dir ]
     then
-        echo "ImHex already installed!"
+        echo ">>> ImHex already installed!"
         return 1
     fi
     cd $HOME/Downloads
     wget https://github.com/WerWolv/ImHex/releases/download/v1.7.0/Linux.ELF.zip
     unzip -q Linux.ELF.zip -d $install_dir
     chmod +x $install_dir/imhex
-    echo "ImHex already installed."
+    echo ">>> ImHex already installed."
     return 0
 }
 
@@ -41,7 +42,7 @@ function install_cutter {
     install_dir="$HOME/Cutter"
     if [ -d $install_dir ]
     then
-        echo "Cutter already installed!"
+        echo ">>> Cutter already installed!"
         return 1
     fi
     cd $HOME/Downloads
@@ -50,7 +51,7 @@ function install_cutter {
     chmod +x $cutter_appimage
     mkdir $install_dir
     mv $cutter_appimage $install_dir
-    echo "Cutter installed."
+    echo ">>> Cutter installed."
     return 0
 }
 
@@ -58,7 +59,7 @@ function install_ghidra {
     install_dir="$HOME/Ghidra"
     if [ -d $install_dir ]
     then
-        echo "Ghidra already installed!"
+        echo ">>> Ghidra already installed!"
         return 1
     fi
     cd $HOME/Downloads
@@ -79,13 +80,13 @@ function install_ghidra {
     cd $install_dir
     ghi_dir=`ls | grep ghidra_`
     rm $HOME/Downloads/ghidra*zip
-    echo "Ghidra installed."
+    echo ">>> Ghidra installed."
     return 0
 }
 
 
 sudo apt -y update && sudo apt -y upgrade
-sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl
+sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl gcc-multilib g++-multilib libc6-dbg:i386
 sudo pip3 install --upgrade pip
 sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools scapy volatility3
 
@@ -94,4 +95,4 @@ install_vscode
 install_imhex
 install_cutter
 install_ghidra
-bash -c "$(wget http://gef.blah.cat/sh -O -)"  # Install GEF - GDB Enhanced Features
+bash -c "$(wget http://gef.blah.cat/sh -O -)"  # GEF - GDB Enhanced Features
