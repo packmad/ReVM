@@ -1,0 +1,4 @@
+versatile-pb-*.dtb
+kernel-qemu-*
+*raspios*.img
+qemu_raspi_*.7z

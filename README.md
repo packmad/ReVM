@@ -2,7 +2,8 @@
 
 ### Tools
 + Hex Editors
-  + [ImHex](https://github.com/WerWolv/ImHex)
+  + [010editor](https://www.sweetscape.com/010editor/)
+    + License expiration: #TODO
 + Integrated Development Environments
   + [Visual Studio Code](https://code.visualstudio.com/)
 + Network Analyzers
@@ -27,6 +28,12 @@
 ### Documents
   + [SAT/SMT by Example](https://sat-smt.codes/)
 
+### Useful aliases
+```
+alias ghidra='/home/dude/Ghidra/ghidra_9.2.3_PUBLIC/ghidraRun'
+alias cutter='/home/dude/Cutter/Cutter-v2.0.2-x64.Linux.appimage'
+alias ida64free='/home/dude/idafree-7.0/ida64'
+```
 
 ### Todo
 + 010editor
