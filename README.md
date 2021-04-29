@@ -1,21 +1,26 @@
 # ReVM
 
 ### Tools
-+ Coding
-  + [Visual Studio Code](https://code.visualstudio.com/)
-+ Reversing Framework
-  + [Cutter](https://cutter.re/)
-  + [Ghidra](https://www.ghidra-sre.org/)
-  + [IDA Freeware](https://www.hex-rays.com/products/ida/support/download_freeware/)
-+ Hex Editor
++ Hex Editors
   + [ImHex](https://github.com/WerWolv/ImHex)
++ Integrated Development Environments
+  + [Visual Studio Code](https://code.visualstudio.com/)
++ Network Analyzers
+  + [Wireshark](https://www.wireshark.org/)
+  + [tshark](https://www.wireshark.org/docs/man-pages/tshark.html)
 + Python Packages
   + [capstone](https://pypi.org/project/capstone/) 
   + [keystone-engine](https://pypi.org/project/keystone-engine/)
   + [pwntools](https://pypi.org/project/pwntools/)
   + [ropper](https://pypi.org/project/ropper/)
+  + [scapy](https://pypi.org/project/scapy/)
   + [unicorn](https://pypi.org/project/unicorn/)
+  + [volatility3](https://pypi.org/project/volatility3/)
   + [z3-solver](https://pypi.org/project/z3-solver/)
++ Reversing Frameworks
+  + [Cutter](https://cutter.re/)
+  + [Ghidra](https://www.ghidra-sre.org/)
+  + [IDA Freeware](https://www.hex-rays.com/products/ida/support/download_freeware/)
 
 
 ### Documents
@@ -27,5 +32,4 @@
 `gcc-multilib g++-multilib libc6-dbg:i386`
 + imhex
 + 010editor
-+ ida
 + qemu starter.sh + import ssh key qemu

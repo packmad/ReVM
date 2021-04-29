@@ -4,17 +4,21 @@ function download_documents {
     doc_dir="$HOME/Documents"
     if [ ! -f "$doc_dir/SAT_SMT_by_example.pdf" ]; then
         wget https://sat-smt.codes/SAT_SMT_by_example.pdf
+        return 0
     fi
+    return 1
 }
 
 function install_vscode {
-    if [ -f "/etc/apt/sources.list.d/vscode.list" ]; then
-        echo "Visual Studio Code already installed!"
-        exit 1
+    grep -r vscode /etc/apt/
+    retVal=$?
+    if [ $retVal -ne 0 ]; then
+        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        sudo apt install code
+        return 0
     fi
-    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    sudo apt install code
+    return 1
 }
 
 function install_imhex {
@@ -22,12 +26,13 @@ function install_imhex {
     if [ -d $install_dir ]
     then
         echo "ImHex already installed!"
-        exit 1
+        return 1
     fi
     cd $HOME/Downloads
     wget https://github.com/WerWolv/ImHex/releases/download/v1.7.0/Linux.ELF.zip
     unzip -q Linux.ELF.zip -d $install_dir
-    #TODO continue
+    chmod +x $install_dir/imhex
+    return 0
 }
 
 function install_cutter {
@@ -35,7 +40,7 @@ function install_cutter {
     if [ -d $install_dir ]
     then
         echo "Cutter already installed!"
-        exit 1
+        return 1
     fi
     cd $HOME/Downloads
     wget https://github.com/rizinorg/cutter/releases/download/v2.0.2/Cutter-v2.0.2-x64.Linux.appimage
@@ -43,7 +48,7 @@ function install_cutter {
     chmod +x $cutter_appimage
     mkdir $install_dir
     mv $cutter_appimage $install_dir
-    #rm $cutter_appimage
+    return 0
 }
 
 function install_ghidra {
@@ -51,7 +56,7 @@ function install_ghidra {
     if [ -d $install_dir ]
     then
         echo "Ghidra already installed!"
-        exit 1
+        return 1
     fi
     cd $HOME/Downloads
     #TOFIX wget -r -l1 -H -t1 -nd -N -np -A.zip -erobots=off https://www.ghidra-sre.org
@@ -64,21 +69,22 @@ function install_ghidra {
     retVal=$?
     if [ $retVal -ne 0 ]; then
         echo "Hash mismatch - file corrupted! Exiting."
-        exit 1
+        return 1
     fi
     mkdir $install_dir
     unzip -q $ghidra_zip -d $install_dir
     cd $install_dir
     ghi_dir=`ls | grep ghidra_`
-    echo "alias ghidra='$install_dir/$ghi_dir/ghidraRun'" # >> ~/.bashrc
-    #rm $HOME/Downloads/ghidra*zip
+    echo "Ghidra installed!"
+    rm $HOME/Downloads/ghidra*zip
+    return 0
 }
 
 
 sudo apt -y update && sudo apt -y upgrade
-sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator
+sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl
 sudo pip3 install --upgrade pip
-sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools
+sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools scapy volatility3
 
 download_documents
 install_vscode
