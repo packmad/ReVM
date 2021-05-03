@@ -69,9 +69,18 @@ function install_ghidra {
     return 0
 }
 
+function install_metasploit {
+    if [[ -f /usr/bin/msfvenom ]]
+    then
+	echo ">>> Metasploit already installed."
+	return 1
+    fi
+    curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > /tmp/msfinstall && chmod 755 /tmp/msfinstall && /tmp/msfinstall
+    return 0
+}
 
 sudo apt -y update && sudo apt -y upgrade
-sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl gcc-multilib g++-multilib libc6-dbg:i386
+sudo apt -y install python3-pip vim bvi vbindiff build-essential ruby-dev nasm ht reptyr libseccomp-dev libc6-dbg software-properties-common apt-transport-https wget binutils xxd openjdk-11-jdk openjdk-11-jre-headless qemu-system-arm tmux git wireshark tshark terminator yara curl gcc-multilib g++-multilib libc6-dbg:i386 ipython3
 sudo pip3 install --upgrade pip
 sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools scapy volatility3 frida
 
@@ -81,3 +90,4 @@ install_imhex
 install_cutter
 install_ghidra
 bash -c "$(wget http://gef.blah.cat/sh -O -)"  # GEF - GDB Enhanced Features
+install_metasploit
