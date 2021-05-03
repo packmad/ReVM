@@ -3,7 +3,7 @@
 ### Tools
 + Hex Editors
   + [010editor](https://www.sweetscape.com/010editor/)
-    + License expiration: #TODO
+    + License expiration: 04 June 2021
 + Integrated Development Environments
   + [Visual Studio Code](https://code.visualstudio.com/)
 + Network Analyzers
@@ -23,18 +23,18 @@
   + [Cutter](https://cutter.re/)
   + [Ghidra](https://www.ghidra-sre.org/)
   + [IDA Freeware](https://www.hex-rays.com/products/ida/support/download_freeware/)
+  + [Rizin](https://rizin.re/)
 
 
 ### Documents
+  + [A First Introduction to System Exploitation](https://research.checkpoint.com/wp-content/uploads/2020/03/pwnable_writeup.pdf)
+  + [RE4B - Reverse Engineering for Beginners](https://beginners.re/main.html)
   + [SAT/SMT by Example](https://sat-smt.codes/)
 
 ### Useful aliases
 ```
-alias ghidra='/home/dude/Ghidra/ghidra_9.2.3_PUBLIC/ghidraRun'
 alias cutter='/home/dude/Cutter/Cutter-v2.0.2-x64.Linux.appimage'
+alias ghidra='/home/dude/Ghidra/ghidra_9.2.3_PUBLIC/ghidraRun'
 alias ida64free='/home/dude/idafree-7.0/ida64'
+alias rizin='/home/dude/rizin/bin/rizin'
 ```
-
-### Todo
-+ 010editor
-+ qemu starter.sh + import ssh key qemu
