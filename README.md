@@ -123,6 +123,5 @@ alias rizin='/home/dude/rizin/bin/rizin'
 | -----------  | -------- | -------- |
 | Ubuntu 20.04 | dude     | dude     |
 | RPi OS 10    | pi       | pi       |
-|||
 
 You should change them :)
