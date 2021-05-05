@@ -17,12 +17,14 @@ An OVA file is a virtual appliance used by virtualization applications such as V
 ### Import the OVA with VirtualBox
 
 1. [Download](https://www.virtualbox.org/) and install VirtualBox if you do not have it already
-   + on Debian/Ubuntu: `sudo apt install virtualbox`
+   + on Debian-based distros: `sudo apt install virtualbox`
 2. Open VirtualBox
 3. Select File and Import Appliance
 4. Select your OVA file in the import box and verify the settings in the center window
 5. Make any changes if you need (maybe you want to give it more RAM)
 6. Click Import at the bottom.
+
+<br/>
 
 ### Errors related to VT-x/AMD-V
 Modern CPUs include hardware virtualization features that help accelerate virtual machines, but those features are not always enabled by default.
@@ -105,6 +107,7 @@ From Ubuntu to RPi:
 <br/>
 
 ## Useful aliases
+The following aliases are already setup in ReVM
 ```
 alias cutter='/home/dude/Cutter/Cutter-v2.0.2-x64.Linux.appimage'
 alias ghidra='/home/dude/Ghidra/ghidra_9.2.3_PUBLIC/ghidraRun'
@@ -120,6 +123,6 @@ alias rizin='/home/dude/rizin/bin/rizin'
 | -----------  | -------- | -------- |
 | Ubuntu 20.04 | dude     | dude     |
 | RPi OS 10    | pi       | pi       |
-|
+|||
 
 You should change them :)
