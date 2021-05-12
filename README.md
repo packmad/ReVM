@@ -12,7 +12,7 @@ Just double click on it and a script will take care to pull this repository and 
 <br/>
 
 ## Download and run ReVM
-You can download `ReVM.ova` from [here](https://drive.google.com/file/d/1Uc76h_vFZW3v1hn2XxPbc5hp9NtF3zs4/view?usp=sharing).
+You can download `ReVM.ova` from [here](https://drive.google.com/file/d/1u4K-sMgVLVRZIvikoLenUfA4zNfqiAB3/view?usp=sharing).
 An OVA file is a virtual appliance used by virtualization applications such as VMware Workstation and Oracle VM Virtualbox.
 
 
