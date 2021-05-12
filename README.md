@@ -1,5 +1,7 @@
 # ReVM
 
+![ReVM desktop](imgs/revm.png?raw=true "ReVM desktop")
+
 ReVM is a pre-configured Ubuntu 20.04 virtual machine with the necessary tools to practice reverse engineering and exploitation of binary files.
 
 The purpose of this git repository (you will find it inside the VM at `/home/dude/ReVM/`) is to update remotely the software and/or fix problems.
