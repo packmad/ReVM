@@ -14,6 +14,14 @@ You can download `ReVM.ova` from [here](https://drive.google.com/file/d/1Uc76h_v
 An OVA file is a virtual appliance used by virtualization applications such as VMware Workstation and Oracle VM Virtualbox.
 
 
+### Import the OVA with VMware
+1. [Download](https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html) and install VMware Workstation Player if you do not have it already
+1. Open VMware
+2. Select Open a Virtual Machine
+3. Select your OVA file, and click Open, then Import
+4. In case of error `The import failed because ReVM.ova did not pass OVF specification [...]` just click Retry
+
+
 ### Import the OVA with VirtualBox
 
 1. [Download](https://www.virtualbox.org/) and install VirtualBox if you do not have it already
