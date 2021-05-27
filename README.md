@@ -74,6 +74,11 @@ From Ubuntu to RPi:
 `scp /source/file/path raspi:/dest/file/path`
 
 
+### Core dumps
+On RPi the core file dumps are enabled for all users when an application crashes or segmentation faults.
+The folder that contains the dumps is: `/var/lib/coredumps`
+
+
 
 
 <br/>
