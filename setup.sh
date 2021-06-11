@@ -86,7 +86,6 @@ sudo pip3 install capstone ropper unicorn keystone-engine z3-solver pwntools sca
 
 download_documents
 install_vscode
-install_imhex
 install_cutter
 install_ghidra
 bash -c "$(wget http://gef.blah.cat/sh -O -)"  # GEF - GDB Enhanced Features
