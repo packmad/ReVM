@@ -115,7 +115,7 @@ The folder that contains the dumps is: `/var/lib/coredumps`
 <br/>
 
 ## Documents
-  + [A First Introduction to System Exploitation](https://research.checkpoint.com/wp-content/uploads/2020/03/pwnable_writeup.pdf)
+  + [A First Introduction to System Exploitation](https://github.com/BenH11235/pwnable_writeup/releases/latest/download/a_first_introduction_to_system_exploitation.pdf)
   + [RE4B - Reverse Engineering for Beginners](https://beginners.re/main.html)
   + [SAT/SMT by Example](https://sat-smt.codes/)
 
